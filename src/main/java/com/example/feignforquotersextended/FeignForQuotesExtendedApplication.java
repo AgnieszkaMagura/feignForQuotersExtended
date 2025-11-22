@@ -1,6 +1,8 @@
 package com.example.feignforquotersextended;
 
 
+import feign.FeignException;
+import feign.RetryableException;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
@@ -27,6 +29,7 @@ public class FeignForQuotesExtendedApplication {
     @EventListener(ApplicationReadyEvent.class)
     public void testFeign() {
 
+        try {
         // GET /apiWithHeader with header "requestId: someID"
         log.info("=== GET /apiWithHeader z nagłówkiem requestId ===");
         List<QuoteResponse> headerResponses = quotesClient.getAllWithHeader("someID");
@@ -47,8 +50,18 @@ public class FeignForQuotesExtendedApplication {
         log.info("=== DELETE /api/quote/12 ===");
         QuoteResponse deleted = quotesClient.deleteQuote(12L);
         log.info("Delete response: {}", deleted);
-    }
 
+        } catch (FeignException.FeignClientException feignException) {
+            log.error("client exception: " + feignException.status());
+        } catch (FeignException.FeignServerException feignException) {
+            log.error("server exception: " + feignException.status());
+        } catch (RetryableException retryableException) {
+            log.error("retryable exception" + retryableException.getMessage());
+        } catch (FeignException feignException) {
+            log.error(feignException.getMessage());
+            log.error(feignException.status());
+        }
+    }
 }
 
 
