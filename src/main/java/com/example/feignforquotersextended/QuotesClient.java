@@ -22,6 +22,6 @@ public interface QuotesClient {
 
     //DELETE /api/quote/12
     @DeleteMapping("api/quote/{id}")
-    QuoteResponse deleteQuote(@PathVariable("id") Long id);
+    QuoteResponse deleteQuoteById(@PathVariable("id") Long id);
 
 }

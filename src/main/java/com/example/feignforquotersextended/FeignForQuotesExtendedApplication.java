@@ -48,7 +48,7 @@ public class FeignForQuotesExtendedApplication {
 
         // DELETE /api/quote/12
         log.info("=== DELETE /api/quote/12 ===");
-        QuoteResponse deleted = quotesClient.deleteQuote(12L);
+        QuoteResponse deleted = quotesClient.deleteQuoteById(12L);
         log.info("Delete response: {}", deleted);
 
         } catch (FeignException.FeignClientException feignException) {
