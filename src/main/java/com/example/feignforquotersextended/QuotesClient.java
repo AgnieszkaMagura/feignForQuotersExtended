@@ -17,7 +17,7 @@ public interface QuotesClient {
     QuoteResponse getQuoteById(@RequestParam("id") Long id);
 
     // POST /api/quote/12
-    @PostMapping("/api/quote/{id}")
+    @PostMapping("/api/quote")
     QuoteResponse createQuote(@RequestBody QuoteRequest quoteRequest);
 
     //DELETE /api/quote/12
