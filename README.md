@@ -63,7 +63,6 @@ src
      │    └── FeignApplication.java
      └── resources
           └── application.yml
-```
 
 === Starting API consumption tests ===
 -- GET with header --
@@ -76,6 +75,6 @@ New quote created: some quote
 Deleted quote with ID=12
 === Tests completed ===
 ❤️ Author
-
+```
 Project created as part of Spring Boot learning path.
 Feel free to review, comment, or send suggestions!
