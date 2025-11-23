@@ -53,6 +53,7 @@ or
 ./gradlew bootRun
 📁 Project Structure
 
+``` text
 src
  └── main
      ├── java
@@ -62,6 +63,8 @@ src
      │    └── FeignApplication.java
      └── resources
           └── application.yml
+```
+
 === Starting API consumption tests ===
 -- GET with header --
 Response from header call: [ ... ]
