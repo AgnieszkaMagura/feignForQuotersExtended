@@ -74,7 +74,7 @@ New quote created: some quote
 -- DELETE quote --
 Deleted quote with ID=12
 === Tests completed ===
-❤️ Author
 ```
+❤️ Author
 Project created as part of Spring Boot learning path.
 Feel free to review, comment, or send suggestions!
